@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function(){
-    return view('home');
-});
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/carousel_edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('carousel_edit');
+
+Route::get('/carrousel_add', [App\Http\Controllers\HomeController::class, 'create'])->name('carousel_add');
+
+
