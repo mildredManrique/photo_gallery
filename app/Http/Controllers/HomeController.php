@@ -24,13 +24,5 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
-    }
-
-    public function edit(){
-        return view('carousel_edit');
-    }
-
-    public function create(){
-        return view('carrousel_add');
-    }
+    }   
 }

@@ -21,8 +21,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/carousel_edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('carousel_edit');
+Route::get('/carrousel_add', [App\Http\Controllers\CarrousselController::class, 'create'])->name('carrousel_add');
 
-Route::get('/carrousel_add', [App\Http\Controllers\HomeController::class, 'create'])->name('carousel_add');
+Route::get('/carousel_edit', [App\Http\Controllers\CarrousselController::class, 'edit'])->name('carousel_edit');
 
-
+Route::post('/carousel_store', [App\Http\Controllers\CarrousselController::class, 'store'])->name('carousel_store');
