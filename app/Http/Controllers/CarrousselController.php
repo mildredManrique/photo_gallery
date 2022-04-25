@@ -2,22 +2,21 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Http\Requests\CarrousselRequest;
+use Illuminate\Http\Request;
 use App\Models\Carroussel;
 
 class CarrousselController extends Controller
 {
 
-    public function store(CarrousselRequest $request)
+    public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $carroussel = Carroussel::create([      
-           'user_id' =>auth()->user->id
+           'user_id' =>auth()->user()->id,
         ]+ $request->all());
 
-        if($request->file('file')) {
-            $carroussel->image = $request->file('file')->store('carroussel', 'public');
+        if($request->file('image')) {
+            $carroussel->image = $request->file('image')->store('carroussel', 'public');
             $carroussel->save();
         }
 

@@ -18,21 +18,23 @@
                         class="row g-3">
                         <div class="col-md-6">
                             <label for="input" class="form-label">Titulo *</label>
-                            <input type="input" class="form-control" id="input" required>
+                            <input type="input" class="form-control" id="input" name="title" required>
                         </div>
                         <div class="col-md-6 gato">
                             <lable>Image *</lable>
-                            <input class="form-control mt-3" type="file" name="file" required>
+                            <input class="form-control mt-3" type="file" name="image" required>
                         </div>
                         <div class="col-md-6">
                             <label for="exampleFormControlTextarea1" class="form-label">Descripción* </label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="5"
                                 required></textarea>
                         </div>
                         <div class="col-12 botones d-grid gap-2 d-md-flex justify-content-md-end">
                             @csrf
                             <input type="submit" class="btn btn-primary" value="Guardar">
-
+                            <a href="/home">
+                                <input type="button" class="btn btn-outline-dark" value="Regresar">
+                            </a>
                         </div>
                     </form>
                 </div>

@@ -18,7 +18,6 @@ class CreateCarrousselsTable extends Migration
             
             $table->integer('user_id');
             $table->string('title');
-            $table->string('slug')->unique();
 
             $table->string('image');
 

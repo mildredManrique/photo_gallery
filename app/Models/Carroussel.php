@@ -8,20 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Carroussel extends Model
 {    
-    protected $fillable = ['user_id', 'title', 'slug', 'image', 'body'];
+    protected $fillable = ['user_id', 'title', 'image', 'body'];
   
-    use HasFactory;
-    
-    
+    use HasFactory;   
 
-    public function sluggable()
+    public function getGetImageAttribute()
     {
-        return [
-            'slug' => [
-                'source' => 'title',
-                'onUpdate' => true
-            ]
-        ];
+        if($this->image)
+        return url("storage/$this->image");
     }
     
 }

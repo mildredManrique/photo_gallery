@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Carroussel;
 
 class HomeController extends Controller
 {
@@ -22,7 +23,13 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
+    { 
+        $image = Carroussel::all()->take(3);
+
+        return view('home', 
+             [
+               'carrousel' => $image
+             ]          
+        );
     }   
 }
